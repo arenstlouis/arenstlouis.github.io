@@ -1,15 +1,46 @@
-body {
-	background-color: "rgb(224,224,224)"
-	}
+<html>
+     <head>
+         <title>Home</title>
+         <style>
+         header {
+             position: fixed;
+             background-color: #bbbbbb;
+             top: 0px;
+             left: 0px;
+             width: 100%;
+             height: 20px;
+         }
+         nav {
+             margin-top: 20px;
+             margin-bottom: 0px;
+             background-color: green;
+         }
+         nav li {
+            display: inline;
+         }
+         section {
+             float: left;
+             width: 20%;
+             height: 500px;
+             background-color: blue;
+             color: white;
+         }
+         aside {
+             float: left;
+             width: 80%;
+             height: 500px;
+             background-color: red;
+         }
+         footer {
+             clear: both;
+             background-color: yellow;
+         }
+         body {
+             background-color: black;
+             margin: 0px;
+         }
+         </style>
 
-h1 {
-	color: green;
-	font-family: "Arial"
-	}
-
-p {
-	color: black;
-	font-family: "Verdana"
-	}
-	
+     </head>
+ </html>
 
