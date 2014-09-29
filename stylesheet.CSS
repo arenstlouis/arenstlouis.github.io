@@ -9,32 +9,14 @@
              width: 100%;
              height: 20px;
          }
-         ul li {
-           display: inline-block;
-           margin: 0;
-           padding: 0;
-           text-align: center;
-           width: 100px;
-           background: royalblue;
-           border: solid;
-           border-color: black;
-           position: relative;
-           float: left;
-           color: white;
-       }
-       nav ul ul {
-           display: none;
-           position: absolute;
-           top: 20px;
-           left: -43px;
-       }
-       nav ul li:hover > ul {
-           display: block;
-           position: absolute;
-       }
-       li.submenu:hover {
-           background: #55d;
-       }
+         nav {
+             margin-top: 20px;
+             margin-bottom: 0px;
+             background-color: green;
+         }
+         nav li {
+            display: inline;
+         }
          section {
              float: left;
              width: 20%;
