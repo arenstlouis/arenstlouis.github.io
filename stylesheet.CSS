@@ -15,7 +15,7 @@
            padding: 0;
            text-align: center;
            width: 100px;
-           background: 2088B2;
+           background: #2088B2;
            border: solid;
            border-color: black;
            position: relative;
@@ -39,7 +39,7 @@
              float: left;
              width: 20%;
              height: 500px;
-             background-color: blue;
+             background-color: #2088B2;
              color: white;
          }
          aside {
