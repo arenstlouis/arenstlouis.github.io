@@ -15,7 +15,7 @@
            padding: 0;
            text-align: center;
            width: 100px;
-           background: royalblue;
+           background: 2088B2;
            border: solid;
            border-color: black;
            position: relative;
@@ -46,14 +46,14 @@
              float: left;
              width: 80%;
              height: 500px;
-             background-color: #CCFFCC;
+             background-color: #528413;
          }
          footer {
              clear: both;
              background-color: yellow;
          }
          body {
-             background-color: black;
+             background-color: #D86E3F;
              margin: 0px;
          }
          </style>
