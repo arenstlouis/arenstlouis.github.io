@@ -16,7 +16,7 @@
            padding: 0;
            text-align: center;
            width: 100px;
-           background: #2088B2;
+           background: #3399FF;
            border: solid;
            border-color: black;
            position: relative;
@@ -40,21 +40,21 @@
              float: left;
              width: 20%;
              height: 500px;
-             background-color: #2088B2;
+             background-color: #FFFFFF;
              color: white;
          }
          aside {
              float: left;
              width: 80%;
              height: 500px;
-             background-color: #528413;
+             background-color: #3366CC;
          }
          footer {
              clear: both;
              background-color: yellow;
          }
          body {
-             background-color: #B22222;
+             background-color: #333399;
              margin: 0px;
          }
          </style>
