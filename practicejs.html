@@ -1,12 +1,26 @@
 <html>
-	<body>
-		<h1>Hello World!!</h1>
-		<button onclick="changeThisPageFunc();">Click Me!</button>
-		<script type="text/javascript">
-			changeThisPageFunc() = function() {
-				document.body.style.backgroundColor = "lightblue";
-				document.body.innerHTML = "<h1>I am a little blue today</h1>
+	<head>
+		
+	<script type="text/javascript">
+			changeBGColor = function() {
+				var redvalue.style.color=document.getElementById("redinvalue");
+				redvalue.style.color=newredvalue;
+				var greenvalue.style.color=document.getElementById("greeninvalue");
+				greenvalue.style.color=newgreenvalue;
+				var bluevalue.style.color=document.getElementById("blueinvalue");
+				bluevalue.style.color=newbluevalue;
+				document.body.style.backgroundColor = "rgb(" +newredvalue+ ', ' +newgreenvalue+ ', ' +newbluevalue+ ')';
+				
 			}
-		</script>
+	</script>
+	</head>
+	<body>
+		<label for="redinvalue">Red:</label>
+		<input id="redinvalue" type="text", name="redinvalue">
+		<label for="greeninvalue">Green:</label>
+		<input id="greeninvalue" type="text", name="greeninvalue">
+		<label for="blueinvalue">Blue:</label>
+		<input id="blueinvalue" type="text", name="blueinvalue">
+		<button onclick="changeBGColor('redinvalue', 'greeninvalue', 'blueinvalue');">Click Me!</button>
 	</body>
 </html>
