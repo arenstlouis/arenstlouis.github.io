@@ -1,13 +1,14 @@
 <html>
 	<head>
 		<h1> To-Do List </h1>
+		<link rel="stylesheet" href = "stylesheet.CSS" type = "text/css" />
 	</head>
 	<script type="text/javascript">
 		var list = document.getElementById('demo');
 
 		function addListItem() {
     		var newli;
-    		task = document.querySelector("#taskbox");
+    		task = document.querySelector("#demo");
     		tasklist = document.querySelector("#listText");
     		priorityValue = document.querySelector("#priority").value;
     		newli = document.createElement('input');
