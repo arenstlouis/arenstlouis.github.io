@@ -6,12 +6,24 @@
 		var list = document.getElementById('demo');
 
 		function addListItem() {
-    		var listText = document.getElementById('listText').value;
-    		document.getElementById('taskList').innerHTML = listText;
-    		var entry = document.createElement('li');
-    		entry.appendChild(document.createTextNode(listText));
-    		list.appendChild(entry);
-		}
+    		var newli;
+    		task = document.querySelector("#taskbox");
+    		tasklist = document.querySelector("#listText");
+    		priorityValue = document.querySelector("#priority").value;
+    		newli = document.createElement('input');
+    		newli.className = priorityValue;
+    		newcb = document.createElement('input');
+    		newcb.type = 'checkbox'
+    		newli.appendChild(newcb);
+    		t = document.createTextNode(task.value);
+    		newli.appendChild(t);
+    		newcb.id = taskcount;
+    		tasklist.appendChild(newli);
+    		task.value="";
+    		
+    		newcb.onclick = function()
+    			newli.style.textDecoration = "line-through"
+    		}
 	</script>
 	<section>
 		<ul id="demo"></ul>
