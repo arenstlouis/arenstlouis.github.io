@@ -3,16 +3,18 @@
 		<h1> To-Do List </h1>
 	</head>
 	<script type="text/javascript">
+		var list = document.getElementById('demo');
 		function addListItem() {
 			var text = document.getElementById('listText').value;
+			document.getElementById('demo').innerHTML = listText;
+			var entry = document.createElement('li');
+			entry.appendChild(document.createTextNode(listText));
+			list.appendChild(entry);
 	<section>
-		<ul>
+		<ul id='demo'>
 		</ul>
 	</section>
-	<label for="
-	<input id='listText' type='text'
+	<input type='button' onclick='addListItem()' id='listText' type='text' value='Submit' />
 </html>
-
-http://stackoverflow.com/questions/17773938/add-a-list-item-through-javascript
 			
 			
