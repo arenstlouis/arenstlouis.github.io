@@ -4,7 +4,6 @@
 		<link rel="stylesheet" href = "stylesheet.CSS" type = "text/css" />
 	</head>
 	<script type="text/javascript">
-		var list = document.getElementById('demo');
 
 		function addListItem() {
     		var newli;
@@ -14,7 +13,7 @@
     		newli = document.createElement('input');
     		newli.className = priorityValue;
     		newcb = document.createElement('input');
-    		newcb.type = 'checkbox'
+    		newcb.type = 'checkbox';
     		newli.appendChild(newcb);
     		t = document.createTextNode(task.value);
     		newli.appendChild(t);
