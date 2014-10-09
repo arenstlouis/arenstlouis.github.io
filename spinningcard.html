@@ -4,11 +4,19 @@
 		<link rel="stylesheet" href = "stylesheet.CSS" type = "text/css" />
 	</head>
 	<style>
+	img#a {
+		position: relative;
+		top: 20px;
+		left: -100px;
+	}
 	
 	.card {
 	-ms-transform: rotate(30deg); /* IE 9 */
     -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
-    transform: rotate(30deg);
+    transform: rotate(30deg); /* Firefox */
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    
 	}
 	</style>
 	
