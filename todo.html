@@ -9,6 +9,7 @@
     		var newli;
     		task = document.querySelector("#demo");
     		tasklist = document.querySelector("#listText");
+    		alert(tasklist);
     		priorityValue = document.querySelector("#priority").value;
     		newli = document.createElement('input');
     		newli.type = "text";
@@ -23,9 +24,10 @@
     		
     		newcb.onclick = function() {
     			newli.style.textDecoration = "line-through"
-    		localTextSave();
+    		//localTextSave();
+    		}
     	}
-    	function localTextSave() {
+    	/*function localTextSave() {
     		listText = [];
     		
     		text = document.getElementById("#listText")
@@ -36,7 +38,7 @@
     		localStorage.setItem("todoText", JSON.stringify(listText));
     	}
     	
-    	function localTextLoad() {
+    	//function localTextLoad() {
     		textget = localStorage.getItem("todoText");
     		
     		textarray = [];
@@ -45,19 +47,19 @@
     		
     		for(var i=0; i < textarray.length; i++){
     			addNew("text", loadText[i]);
-    	}
+    	}*/
     			
 	</script>
-	<body onload="localTextLoad()">
+	<body>
 		<label for="demo">Enter Task</label>
 		<input type="text" id="demo" size=40 value="enter task here">
 		<select id="priority">
 			<option>High</option>
 			<option>Medium</option>
 			<option>Low</option>
+		</select>
 		<br>
-		<p>Your task list is: <p id='listText'></p> 
-		</p>
+		<p>Your task list is: </p> 
 		<p>Other items that are in your task list:</p>
 		<ul id="listText"></ul>
 		<input type='button' onclick='addListItem()' value='Submit' />
