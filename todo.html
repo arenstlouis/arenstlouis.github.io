@@ -11,6 +11,7 @@
     		tasklist = document.querySelector("#listText");
     		priorityValue = document.querySelector("#priority").value;
     		newli = document.createElement('input');
+    		newli.type = "text";
     		newli.className = priorityValue;
     		newcb = document.createElement('input');
     		newcb.type = 'checkbox';
@@ -22,21 +23,43 @@
     		
     		newcb.onclick = function() {
     			newli.style.textDecoration = "line-through"
-    		}
+    		localTextSave();
     	}
+    	function localTextSave() {
+    		listText = [];
+    		
+    		text = document.getElementById("#listText")
+    		for(var i=0; i < .length; i++){
+    			listtext.push(text[i].innerText);
+    		
+    		console.log(listText);
+    		localStorage.setItem("todoText", JSON.stringify(listText));
+    	}
+    	
+    	function localTextLoad() {
+    		textget = localStorage.getItem("todoText");
+    		
+    		textarray = [];
+    		
+    		textarray = JSON.parse(textget);
+    		
+    		for(var i=0; i < textarray.length; i++){
+    			addNew("text", loadText[i]);
+    	}
+    			
 	</script>
-	<body>
-		<label for="listText">Enter Task</label>
-		<input type="text" id="listText" size=40 value="enter task here">
+	<body onload="localTextLoad()">
+		<label for="demo">Enter Task</label>
+		<input type="text" id="demo" size=40 value="enter task here">
 		<select id="priority">
 			<option>High</option>
 			<option>Medium</option>
 			<option>Low</option>
 		<br>
-		<p>Your task list is: <p id='taskList'></p> 
+		<p>Your task list is: <p id='listText'></p> 
 		</p>
 		<p>Other items that are in your task list:</p>
-		<ul id="demo"></ul>
+		<ul id="listText"></ul>
 		<input type='button' onclick='addListItem()' value='Submit' />
 	</body>
 </html>
