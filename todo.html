@@ -9,12 +9,11 @@
     		var newli;
     		task = document.querySelector("#demo");
     		tasklist = document.querySelector("#listText");
-    		alert(tasklist);
     		priorityValue = document.querySelector("#priority").value;
-    		newli = document.createElement('input');
+    		newli = document.createElement('ul');
     		newli.type = "text";
     		newli.className = priorityValue;
-    		newcb = document.createElement('input');
+    		newcb = document.createElement('ul');
     		newcb.type = 'checkbox';
     		newli.appendChild(newcb);
     		t = document.createTextNode(task.value);
@@ -24,21 +23,21 @@
     		
     		newcb.onclick = function() {
     			newli.style.textDecoration = "line-through"
-    		//localTextSave();
+    		localTextSave();
     		}
     	}
-    	/*function localTextSave() {
+    	function localTextSave() {
     		listText = [];
     		
     		text = document.getElementById("#listText")
-    		for(var i=0; i < .length; i++){
-    			listtext.push(text[i].innerText);
+    		for(var i=0; i < listText.length; i++){
+    			listtext.push(text[i].innerText); }
     		
     		console.log(listText);
     		localStorage.setItem("todoText", JSON.stringify(listText));
     	}
     	
-    	//function localTextLoad() {
+    	function localTextLoad() {
     		textget = localStorage.getItem("todoText");
     		
     		textarray = [];
@@ -46,21 +45,20 @@
     		textarray = JSON.parse(textget);
     		
     		for(var i=0; i < textarray.length; i++){
-    			addNew("text", loadText[i]);
-    	}*/
+    			addNew("text", loadText[i]); }
+    	}
     			
 	</script>
 	<body>
 		<label for="demo">Enter Task</label>
-		<input type="text" id="demo" size=40 value="enter task here">
+		<input required type="text" id="demo" size=40 placeholder = "Enter Your Task Here" onfocus="if(this.value == 'Enter Your Task Here') { this.value = '';}" value="Enter Your Task Here">
 		<select id="priority">
 			<option>High</option>
 			<option>Medium</option>
 			<option>Low</option>
 		</select>
 		<br>
-		<p>Your task list is: </p> 
-		<p>Other items that are in your task list:</p>
+		<p>Your task list is: </p>
 		<ul id="listText"></ul>
 		<input type='button' onclick='addListItem()' value='Submit' />
 	</body>
