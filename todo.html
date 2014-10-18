@@ -29,9 +29,9 @@
     	function localTextSave() {
     		listText = [];
     		
-    		text = document.getElementById("#listText")
-    		for(var i=0; i < listText.length; i++){
-    			listtext.push(text[i].innerText); }
+    		text = document.getElementById("#listText");
+    		for(var i=0; i < listText.length; i++)
+    			listText.push(text[i].innerText); 
     		
     		console.log(listText);
     		localStorage.setItem("todoText", JSON.stringify(listText));
@@ -44,8 +44,8 @@
     		
     		textarray = JSON.parse(textget);
     		
-    		for(var i=0; i < textarray.length; i++){
-    			addNew("text", loadText[i]); }
+    		for(var i=0; i < textarray.length; i++)
+    			addListItem("text", loadText[i]); 
     	}
     			
 	</script>
