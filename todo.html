@@ -8,6 +8,7 @@
 		function addListItem() {
     		var newli;
     		task = document.querySelector("#demo");
+    		date = document.querySelector("#date");
     		tasklist = document.querySelector("#listText");
     		priorityValue = document.querySelector("#priority").value;
     		newli = document.createElement('ul');
@@ -16,23 +17,23 @@
     		newcb = document.createElement('input');
     		newcb.type = 'checkbox';
     		newli.appendChild(newcb);
-    		t = document.createTextNode(task.value);
+    		t = document.createTextNode(task.value + "	Due By:" + date.value);
     		newli.appendChild(t);
     		tasklist.appendChild(newli);
     		task.value="";
     		
     		newcb.onclick = function() {
     			newli.style.textDecoration = "line-through";
-    		localTextSave();
     		}
+    		localTextSave();
     	}
     	function localTextSave() {
     		listText = [];
     		
-    		text = document.getElementById("#listText");
-    		for(var i=0; i < listText.length; i++)
+    		text = document.getElementById("listText");
+    		for(var i=0; i < listText.length; i++) {
     			listText.push(text[i].innerText); 
-    		
+    		}
     		console.log(listText);
     		localStorage.setItem("todoText", JSON.stringify(listText));
     	}
@@ -63,6 +64,7 @@
 	<body onload = "localTextLoad()">
 		<label for="demo">Enter Task</label>
 		<input required type="text" id="demo" size=40 placeholder = "Enter Your Task Here" onfocus="if(this.value == 'Enter Your Task Here') { this.value = '';}" value="Enter Your Task Here">
+		<input required type="text" id="date" size=40 placeholder = "Enter Your Due Date Here" onfocus="if(this.value == 'Enter Your Due Date Here') { this.value = '';}" value="Enter Your Due Date Here">
 		<select id="priority">
 			<option>High</option>
 			<option>Medium</option>
