@@ -9,16 +9,19 @@
     		var newli;
     		task = document.querySelector("#demo");
     		date = document.querySelector("#date");
-    		tasklist = document.querySelector("#listText");
+    		tasklist = document.querySelector("#listText"); 
     		priorityValue = document.querySelector("#priority").value;
+    		listValue = document.querySelector("#listType").value;
     		newli = document.createElement('ul');
     		newli.type = "text";
     		newli.className = priorityValue;
     		newcb = document.createElement('input');
     		newcb.type = 'checkbox';
     		newli.appendChild(newcb);
-    		t = document.createTextNode(task.value + "	Due By:" + date.value);
+    		t = document.createTextNode(task.value + "	Due By:  " + date.value);
     		newli.appendChild(t);
+    		righttask = findFunction();
+    		tasklist.className = listValue;
     		tasklist.appendChild(newli);
     		task.value="";
     		
@@ -27,10 +30,21 @@
     		}
     		localTextSave();
     	}
+    	function findFunction() {
+    		if (tasklist.className == "General") {
+    			return "General";
+    		}
+    		if (tasklist.className == "School") {
+    			return "School";
+    		}
+    		if (tasklist.className == "Work") {
+    			return "Work";
+    		}
+    	}
     	function localTextSave() {
     		listText = [];
     		
-    		text = document.getElementById("listText");
+    		text = document.querySelector("listText");
     		for(var i=0; i < listText.length; i++) {
     			listText.push(text[i].innerText); 
     		}
@@ -70,10 +84,48 @@
 			<option>Medium</option>
 			<option>Low</option>
 		</select>
+		<input type='button' onclick='addListItem()' value='Submit' />
+		<br>
+		<br>
+		<b>Which Task List would you like to add your task to? </b>
+		<select name = "listType" id = "listType">
+			<option value = "General"> General </option>
+			<option value = "School"> School </option>
+			<option value = "Work"> Work </option>
+		</select>
+		<br>
+		<br>
+		<b>Which List Would you like to view? </b>
+		<!--
+		<select name = "listSelect" id = "select">
+			<option value= "General"> General </option>
+			<option value="School"> School </option>
+			<option value= "Work"> Work </option>
+		</select>
+		-->
+		<br>
+		<br>
+		<button onclick = "toggle('General')"> General </button>
+		<button onclick = "toggle('School')"> School </button>
+		<button onclick = "toggle('Work')"> Work </button>
 		<br>
 		<p>Your task list is: </p>
-		<ul id="listText"></ul>
-		<input type='button' onclick='addListItem()' value='Submit' />
+		<section>
+		<box>
+		<general id="General">
+		<b> General </b>
+		<ul id="listText" class="General"></ul>
+		</general>
+		<school id="School">
+		<b> School </b>
+		<ul id="listText" class="School"></ul>
+		</school>
+		<work id="Work">
+		<b> Work </b>
+		<ul id="listText" class="Work"></ul>
+		</work>
+		</box>
+		</section>
 	</body>
 </html>
 			
