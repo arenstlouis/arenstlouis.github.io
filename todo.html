@@ -11,7 +11,7 @@
     		date = document.querySelector("#date");
     		tasklist = document.querySelector("#listText"); 
     		priorityValue = document.querySelector("#priority").value;
-    		listValue = document.querySelector("#listType").value;
+    		listValue = document.querySelector("#whichlist").value;
     		newli = document.createElement('ul');
     		newli.type = "text";
     		newli.className = priorityValue;
@@ -22,8 +22,7 @@
     		newli.appendChild(t);
     		righttask = findFunction();
     		tasklist.className = listValue;
-    		alert(listValue.value);
-    		tasklist.appendChild(newli);
+    		tasklist.appendChild(newli).listValue;
     		task.value="";
     		
     		newcb.onclick = function() {
@@ -89,7 +88,7 @@
 		<br>
 		<br>
 		<b>Which Task List would you like to add your task to? </b>
-		<select name = "listType" id = "listType">
+		<select name = "whichlist" id = "whichlist">
 			<option value = "General"> General </option>
 			<option value = "School"> School </option>
 			<option value = "Work"> Work </option>
