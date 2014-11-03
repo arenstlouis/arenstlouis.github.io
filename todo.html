@@ -20,9 +20,11 @@
     		newli.appendChild(newcb);
     		t = document.createTextNode(task.value + "	Due By:  " + date.value);
     		newli.appendChild(t);
-    		righttask = findFunction();
     		tasklist.className = listValue;
-    		tasklist.appendChild(newli).listValue;
+    		var righttask;
+    		righttask.appendChild(newli);
+    		alert(righttask);
+    		righttask = findFunction(listValue);
     		task.value="";
     		
     		newcb.onclick = function() {
@@ -30,15 +32,18 @@
     		}
     		localTextSave();
     	}
-    	function findFunction() {
-    		if (tasklist.className == "General") {
-    			return "General";
+    	function findFunction(aValue) {
+    		if (aValue == "General") {
+    			correctlist = document.getElementsByClassName('General');
+    			return correctlist;
     		}
-    		if (tasklist.className == "School") {
-    			return "School";
+    		if (aValue == "School") {
+    			correctlist = document.getElementsByClassName('School');
+    			return correctlist;
     		}
-    		if (tasklist.className == "Work") {
-    			return "Work";
+    		if (aValue == "Work") {
+    			correctlist = document.getElementsByClassName('Work');
+    			return correctlist;
     		}
     	}
     	function localTextSave() {
