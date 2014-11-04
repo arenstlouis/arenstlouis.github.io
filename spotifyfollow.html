@@ -1,9 +1,10 @@
 <html>
 	<script>
-		createwidget = function() {
+		createwidget = function(someband, somelist) {
+			theband = someband
 			widgetlist = document.querySelector("#widgetlist");
 			widget= document.createElement("IFRAME");
-			var x= getArtistID(stringconvert());
+			x = getArtistID(theband, somelist);
 		}
 		
 		callback = function(artistID) {
@@ -13,8 +14,9 @@
 			widget.style.frameborder = "0";
 			widgetlist.appendChild(widget);
 		}
-		stringconvert = function() {
-			make = document.getElementById("input").value;
+		stringconvert = function(somelist) {
+			for (z=0; z < somelist.length; z++);
+				make = somelist;
 			console.log(make);
 			return make;
 		}	
@@ -22,7 +24,17 @@
 			artistname = someartist.split(' ').join('_')
 			return artistname
 		}
-		getArtistID = function(artname) {
+		artistpass = function() {
+			thelist = ['The Beatles', 'Pink Floyd', 'The Rolling Stones'];
+			for (y=0; y < thelist.length; y++) {
+				createwidget(thelist[y], thelist);
+			}
+		}
+		final = function(aResource, request) {
+			request.open('GET', aResource, true)
+			request.send(null)
+		}
+		getArtistID = function(artname, thelist) {
 			var request = new XMLHttpRequest()
 
    			request.onreadystatechange = function(){
@@ -48,17 +60,19 @@
 			theartist = artistmaker(artname)
 			console.log(theartist)
 			var theResource = 'http://ws.spotify.com/search/1/artist.json?q='+theartist
+			console.log(theResource)
 
-   			request.open('GET', theResource , true)
-
+   			for (a=0; a < thelist.length; a++) {
+   				final(theResource, request)
+			}
    			//request.open('GET','urlread.cgi',true)
 
-   			request.send(null)	
+   			//request.send(null)	
 		}
 	</script>
 	
 	<body>
-		<input type='button' onclick='createwidget()' value='See your favorite artists on Spotify!' />
+		<input type='button' onclick='artistpass()' value='See your favorite artists on Spotify!' />
 		<input required type="text" id="input" size=40 placeholder = "Enter The Artist Here" onfocus="if(this.value == 'Enter The Artist Here') { this.value = '';}" value="Enter The Artist Here">
 	</body>
 	<section>
