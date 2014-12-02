@@ -24,10 +24,16 @@
 			artistname = someartist.split(' ').join('_')
 			return artistname
 		}
+		newcall = function(somefunc) {
+			theanswer= somefunc
+			console.log(theanswer)
+			return theanswer
+		}
 		artistpass = function() {
 			thelist = ['The Beatles', 'Pink Floyd', 'The Rolling Stones'];
 			for (y=0; y < thelist.length; y++) {
 				createwidget(thelist[y], thelist);
+				console.log("peanuts");
 			}
 		}
 		final = function(aResource, request) {
@@ -64,6 +70,7 @@
 
    			for (a=0; a < thelist.length; a++) {
    				final(theResource, request)
+   				
 			}
    			//request.open('GET','urlread.cgi',true)
 
