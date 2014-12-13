@@ -1,72 +1,27 @@
 <html>
 	<script>
-		createmap = function(somelist) {
-			widgetlist = document.querySelector("#widgetlist");
-			widget= document.createElement("IFRAME");
-			x = getMap(theband, somelist);
+		function mapCreate() {
+			address = document.querySelector("#streetAddress");
+			city = document.querySelector("#city");
+			state = document.querySelector("#state");
+			country = document.querySelector("#country");
+			theaddress = stringConvert(address);
+			thecity = stringConvert(city);
+			thecountry = stringConvert(country);
+			console.log(theaddress)
+			console.log(thecity)
+			console.log(thecountry)
 		}
-		
-		callback = function(artistID) {
-			widget.setAttribute("src", "https://www.google.com/maps/embed/v1/place?q="+address+",+"+city+",+"+state+",+"+country+"&key=AIzaSyB3uDG5-6T0_AaVqwg10aoLab9sItnS7Iw");
-			widgetlist.appendChild(widget);
-		}	
-		stringmaker = function(somestring) {
-			stringname = somestring.split(' ').join('+');
-			return stringname
-		}
-		mappass = function(address, city, state, country) {
-			thelist = [address, city, state, country];
-			for (y=0; y < 1; y++) {
-				createmap();
-			}
-		}
-		final = function(aResource, request) {
-			request.open('GET', aResource, true)
-			request.send(null)
-		}
-		getMap = function(addressinfo) {
-			var request = new XMLHttpRequest()
-
-   			request.onreadystatechange = function(){
-
-      		if (request.readyState == 4)   //
-         		if (request.status == 200){  //successful request OK
-
-            		console.log(request.responseText)
-
-            		var res = eval( '(' + request.responseText + ')' )
-
-            		var count = res['resultsCount']
-            		var limit = res['resultsLimit']
-
-            		if (count>limit)
-                		count = limit
-					
-        			callback(addressinfo)
-        			
-				}
-			}
-			theaddress = stringmaker(addressinfo)
-			console.log(theartist)
-			var theResource = 'http://ws.spotify.com/search/1/artist.json?q='+theartist
-			console.log(theResource)
-
-   			for (a=0; a < thelist.length; a++) {
-   				final(theResource, request)
-   				
-			}
-   			//request.open('GET','urlread.cgi',true)
-
-   			//request.send(null)	
+		function stringConvert(astring) {
+			thestring = astring.split(' ').join('+')
+			return thestring
 		}
 	</script>
-	
 	<body>
-		<input type='button' onclick='mappass(Street Address, City, State, Country)' value='Enter the address of the contact you would like to save' />
-		<input required type="text" id="Street Address" size=40 placeholder = "Street Address" onfocus="if(this.value == 'Street Address') { this.value = '';}" value="Street Address">
-		<input required type="text" id="City" size=40 placeholder = "City" onfocus="if(this.value == 'City') { this.value = '';}" value="City">
-		<input required type="text" id="State" size=40 placeholder = "State" onfocus="if(this.value == 'State') { this.value = '';}" value="State">
-		<input required type="text" id="Country" size=40 placeholder = "Country" onfocus="if(this.value == 'Country') { this.value = '';}" value="Country">
+		<p>{{ address }}</p>
+		<p>{{ city }}</p>
+		<p>{{ state }}</p>
+		<p>{{ country }}</p>
 	</body>
 	<section>
 		<ul id="widgetlist">

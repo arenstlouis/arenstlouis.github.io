@@ -1,10 +1,10 @@
 <html>
 	<script>
-		createwidget = function(someband, somelist) {
+		createwidget = function(someband) {
 			theband = someband
 			widgetlist = document.querySelector("#widgetlist");
 			widget= document.createElement("IFRAME");
-			x = getArtistID(theband, somelist);
+			x = getArtistID(theband);
 		}
 		
 		callback = function(artistID) {
@@ -20,27 +20,26 @@
 			console.log(make);
 			return make;
 		}	
-		artistmaker = function(someartist) {
-			artistname = someartist.split(' ').join('_')
-			return artistname
-		}
+		//artistmaker = function(someartist) {
+		//	artistname = someartist.split(' ').join('_')
+		//	return artistname
+		//}
 		newcall = function(somefunc) {
 			theanswer= somefunc
 			console.log(theanswer)
 			return theanswer
 		}
 		artistpass = function() {
-			thelist = ['The Beatles', 'Pink Floyd', 'The Rolling Stones'];
-			for (y=0; y < thelist.length; y++) {
-				createwidget(thelist[y], thelist);
-				console.log("peanuts");
+			band = document.queryselector("#input");
+			
+			createwidget(band);
+			console.log(band);
 			}
-		}
 		final = function(aResource, request) {
 			request.open('GET', aResource, true)
 			request.send(null)
 		}
-		getArtistID = function(artname, thelist) {
+		getArtistID = function(artname) {
 			var request = new XMLHttpRequest()
 
    			request.onreadystatechange = function(){
@@ -63,15 +62,15 @@
         			
 				}
 			}
-			theartist = artistmaker(artname)
-			console.log(theartist)
-			var theResource = 'http://ws.spotify.com/search/1/artist.json?q='+theartist
-			console.log(theResource)
+			//theartist = artistmaker(artname)
+			//console.log(theartist)
+			//var theResource = 'http://ws.spotify.com/search/1/artist.json?q='+theartist
+			//console.log(theResource)
 
-   			for (a=0; a < thelist.length; a++) {
-   				final(theResource, request)
+   			
+   			//final(theResource, request)
    				
-			}
+			
    			//request.open('GET','urlread.cgi',true)
 
    			//request.send(null)	

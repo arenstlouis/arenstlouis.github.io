@@ -1,0 +1,26 @@
+<html>
+   <script>
+   		mappass = function() {
+			address = document.querySelector("#Street_Address");
+			console.log(address);
+			city = document.querySelector("#City");
+			console.log(city);
+			state = document.querySelector("#State");
+			console.log(state);
+			country = document.querySelector("#Country");
+			console.log(country);
+			//createmap(address, city, state, country);
+		}
+	</script>
+<body>
+		<input type='button' onclick='mappass()' value='Enter the address of the contact you would like to save' />
+		<input required type="text" id="Street_Address" size=40 placeholder = "Street Address" onfocus="if(this.value == 'Street Address') { this.value = '';}" value="Street Address">
+		<input required type="text" id="City" size=40 placeholder = "City" onfocus="if(this.value == 'City') { this.value = '';}" value="City">
+		<input required type="text" id="State" size=40 placeholder = "State" onfocus="if(this.value == 'State') { this.value = '';}" value="State">
+		<input required type="text" id="Country" size=40 placeholder = "Country" onfocus="if(this.value == 'Country') { this.value = '';}" value="Country">
+	</body>
+	<section>
+		<ul id="widgetlist">
+		</ul>
+	</section>
+</html>
